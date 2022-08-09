@@ -4,12 +4,17 @@ int count = 2;
 if (size > 1)
 {
     Console.Write("All 'even numbers': ");
-    while (count <= (size - 2) )
+    for (count = 2; count < (size - 2); count += 2)
     {
         Console.Write($"{count}, ");
-        count += 2;
     }
-     Console.Write($"{count}. ");
+    Console.Write($"{count}. ");
+    //while (count <= (size - 2) )
+    //{
+    //    Console.Write($"{count}, ");
+    //    count += 2;
+    //}
+    // Console.Write($"{count}. ");
 }
 else
 {
