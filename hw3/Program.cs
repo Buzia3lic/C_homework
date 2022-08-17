@@ -1,4 +1,4 @@
-﻿Console.Write("Enter number: ");
+Console.Write("Enter number: ");
 int num = int.Parse(Console.ReadLine());
 Console.Write($"All cubed numbers for numbers 1 to {num}: ");
 int i = 0;
