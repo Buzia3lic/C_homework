@@ -1,33 +1,23 @@
-﻿Console.Write("Введите число: ");
-int num = int.Parse(Console.ReadLine());
+﻿Console.Write("Enter array length: ");
+int numAr = int.Parse(Console.ReadLine());
+if (numAr <= 0) goto End;
+Console.Write("Enter min value: ");
+int minAr = int.Parse(Console.ReadLine());
+Console.Write("Enter max value: ");
+int maxAr = int.Parse(Console.ReadLine());
 
-int Sum(int a)
+void RandArr(int num, int min, int max)
 {
-    if (a == 0)
+    int[] arr = new int[num];
+    for (int i = 0; i < arr.Length; i++)
     {
-        return -1;
+        arr[i] = new Random().Next(min, max);
+        //Console.Write($"{arr[i]} ");
     }
-
-    if (a < 0)
-    {
-        a *= -1;
-    }
-
-    int sum = 0;
-    while (a != 0)
-    {
-        sum += a % 10;
-        a /= 10;
-    }
-
-    return sum;
+    Console.WriteLine($"[{String.Join(",", arr)}]");
 }
 
-if (Sum(num) == -1)
-{
-    Console.Write($"Цифр нет");
-}
-else
-{
-    Console.Write($"Сумма цифр в числе {num} равна: {Sum(num)}.");
-}
+RandArr(numAr, minAr, maxAr);
+
+End:
+if (numAr <= 0) Console.Write("Array creation is not possible!");
